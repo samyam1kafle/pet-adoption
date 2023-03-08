@@ -1,0 +1,22 @@
+.pet-image{
+    border: 2px solid black;
+    width: 100px;
+    height: 100px;
+    margin-left: 30px;
+    margin-top: 10px;
+}   
+.singular-feature-pet{
+    width: 200px;
+    margin-left: 10px;
+    margin-right: 100px;
+}
+.to-float {
+    display: flex;
+}
+.paragraph{
+    font-size: 10px;
+    width: 200px;
+}
+.featured-content{
+    margin-left: 20px;
+}

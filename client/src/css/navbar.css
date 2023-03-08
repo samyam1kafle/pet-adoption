@@ -1,0 +1,47 @@
+.logo img{
+    border: 1px solid black;
+    height: 80px;
+    width: 150px;
+    text-align: center;
+    line-height: 70px;
+}
+
+.nav-item li{
+    margin-top: 10px;
+    margin-left: 50px;
+    color: blue;
+    border-right: 4px solid black;
+    padding-right: 15px;
+    text-decoration: underline;
+}
+.nav-item li:nth-last-child(1){
+    border-right: none;
+}
+.nav-item,  .nav-item ul li {
+    float: left;
+}
+.nav-toggle button{
+    border: 1px solid black;
+    font-weight: 700;
+    padding: 0px 20px;
+}
+.selected-button {
+    background-color: brown;
+    color: white;
+}
+.nav-toggle{
+    margin-left: 50%;
+    /* box-shadow: 1px 10px; */
+}
+.navbar{
+    overflow: hidden;
+    width: 100%;
+    margin-left: 50px;
+    margin-top: 50px;
+}
+.search-form{
+    display: block;
+    float: none !important;
+    
+}
+

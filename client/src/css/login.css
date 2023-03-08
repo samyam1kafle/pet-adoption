@@ -1,0 +1,35 @@
+.login-section{
+    margin-top: 50px;
+    padding-right: 50px;
+    width: 35%;
+    height: 500px;
+    border: 2px solid black;
+
+}
+.login-section input{
+    margin-bottom: 10px;
+    margin-left: 50px;
+    border: 2px solid black;
+    width: 80% !important;
+    padding: 2% 0px;
+    display: block;
+}
+.login-logo, .login-section h1,.login-section a{
+    margin-left: 50px;
+}
+
+.login-logo{
+    margin-top: 10%;
+    border: 2px solid black;
+    width: 100px;
+    height: 100px;
+}
+.login input[type='submit']{
+    margin-top: 20px;
+    padding: 1px 0px;
+}
+
+.login a{
+    color: blue;
+    text-decoration: underline;
+}

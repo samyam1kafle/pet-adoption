@@ -1,0 +1,38 @@
+.signup-section{
+    margin-top: 50px;
+    padding-right: 50px;
+    width: 35%;
+    border: 2px solid black;
+    padding-bottom: 20px;
+
+}
+.signup-section p{
+    margin-left: 40px;
+}
+.signup-section input{
+    margin-bottom: 10px;
+    margin-left: 50px;
+    border: 2px solid black;
+    width: 80% !important;
+    padding: 2% 0px;
+    display: block;
+}
+.signup-logo, .signup-section h1,.signup-section a{
+    margin-left: 50px;
+}
+
+.signup-logo{
+    margin-top: 10%;
+    border: 2px solid black;
+    width: 100px;
+    height: 100px;
+}
+.signup input[type='submit']{
+    margin-top: 20px;
+    padding: 1px 0px;
+}
+
+.signup a{
+    color: blue;
+    text-decoration: underline;
+}

@@ -1,0 +1,18 @@
+.search-form{
+    margin-top: 40px;
+    margin-left: 50px;
+}
+.search-form input[type='text']{
+    width: 150px;
+    margin-bottom: 20px;
+}
+.search-form input[type='submit']{
+    padding: 0px 10px;
+}
+.search-form select{
+    width: 150px;
+    margin-right: 20px;
+}
+.search-form input, select{
+    border: 2px solid black;
+}
