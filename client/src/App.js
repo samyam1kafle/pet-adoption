@@ -1,11 +1,13 @@
 import "./App.css";
+import Main from "./pages/Main";
+import React from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      <h1 className="text-3xl text-red-500 font-bold">App</h1>
-    </div>
-  );
+class App extends React.Component {
+    render() {
+      return (
+        <Main></Main>
+      );
+    }
 }
 
 export default App;
