@@ -1,0 +1,30 @@
+.admin-user-request .pet-image{
+    width: 200px;
+    margin-left: 30% !important;
+    height: 150px;
+}
+.admin-user-request .pet-image-small{
+    border: 2px solid black;
+    margin-left: 47% !important;
+    width:  70px;
+    border-radius: 10%;
+    height: 70px;
+}
+.admin-user-request .featured-content{
+    width: 300px;
+    text-align: center;
+}
+.admin-user-request .action{
+    display: flex;
+}
+.admin-user-request  .action button{
+    margin-left: 2px;
+    border: 2px solid black;
+    width: 100%;
+    margin-bottom: 20px;
+}
+.admin-user-request  .user-note{
+    border: 2px solid black;
+    padding: 20px 10px;
+    margin: 10px 0px;
+}

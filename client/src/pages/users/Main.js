@@ -1,8 +1,8 @@
 import React from 'react';
-import Navbar from '../components/Navbar';
-import SearchForm from '../components/SearchForm';
-import SinglePet from '../components/SinglePet';
-import "../css/main.css";
+import Navbar from '../../components/Navbar';
+import SearchForm from '../../components/SearchForm';
+import SinglePet from '../../components/SinglePet';
+import "../../css/main.css";
 
 class Main extends React.Component {
   render() {

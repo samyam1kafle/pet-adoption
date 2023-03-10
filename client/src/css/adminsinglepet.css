@@ -1,0 +1,30 @@
+.admin-singular-feature-pet .pet-image{
+    border: 2px solid black;
+    width: 100px;
+    height: 100px;
+    margin-left: 30px;
+    margin-top: 10px;
+}   
+.admin-singular-feature-pet{
+    width: 400px;
+    margin-left: 10px;
+    margin-right: 100px;
+}
+
+.admin-singular-feature-pet .featured-content{
+    margin-left: 20px;
+}
+.admin-singular-feature-pet .to-float{
+    display: -webkit-inline-box;
+}
+.admin-singular-feature-pet h1{
+    text-align: start !important;
+}
+.admin-singular-feature-pet .action{
+    display: flex;
+}
+.admin-singular-feature-pet .action button{
+    margin-left: 2px;
+    border: 2px solid black;
+    width: 100%;
+}

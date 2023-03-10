@@ -1,0 +1,30 @@
+.register-form .question-note{
+    border: 2px solid black;
+    margin: 0px 35%;
+    padding: 10px 0;
+}
+.register-form .form-item label{
+    width: 500px !important;
+    display: block;
+}
+.register-form .form-item *{
+    float: left;
+}
+.register-form .form-item{
+    margin: 2% 15%;
+}
+.register-form .form-item select{
+    width: 250px;
+    height: 30px;
+}
+.register-form input[type='file']{
+    display: none;
+}
+.register-form .form-item button{
+    border: 2px solid black;
+    padding: 4px 80px;
+}
+.register-form input[type='submit']{
+    padding: 20px 80px;
+    border: 2px solid black;
+}

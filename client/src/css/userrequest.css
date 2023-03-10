@@ -1,0 +1,6 @@
+.featured-user-section .admin-all-user-request{
+    display: flex;
+}
+.featured-user-section .admin-all-user-request *{
+    margin-left: 50px;
+}

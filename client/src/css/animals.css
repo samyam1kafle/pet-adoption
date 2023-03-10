@@ -1,0 +1,18 @@
+.animal-showcase{
+    height: 500px;
+    border: 2px solid black;
+}
+.row{
+    margin-bottom: 30px;
+    display: flex;
+}
+.heading-text-container{
+    text-align: right;
+}
+.heading-text-container h1:nth-of-type(1){
+    color: blue;
+    text-decoration: underline;
+}
+.heading-text-container *{
+    display: inline;
+}

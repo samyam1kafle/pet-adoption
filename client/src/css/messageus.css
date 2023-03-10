@@ -1,0 +1,29 @@
+.message-form .note{
+    margin-bottom: 20px;
+    margin-left: 100px;
+    margin-right: 65%;
+    padding: 10px 10px;
+}
+.message-form .form-item label{
+    display: block;
+}
+.message-form .form-item{
+    margin-bottom: 2%;
+    margin-left: 100px;
+}
+.message-form input[type='email'], .message-form input[type='text']{
+    width: 300px;
+    height: 40px;
+}
+.message-form input,.message-form textarea,.message-form .note{
+    border: 2px solid black;
+}
+.message-form .side-by-side{
+    display: flex;
+}
+.message-form input[type='submit']{
+    margin-top: 35px;
+    margin-left: 30%;
+    padding: 0px 50px;
+    margin-bottom: 20px;
+}

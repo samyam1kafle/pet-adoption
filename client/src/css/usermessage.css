@@ -1,0 +1,7 @@
+.user-message table{
+    border: 1px solid black;
+    margin-top: 5%;
+    width: 70%;
+    margin-left: 20%;
+    border-bottom: 1px solid black;
+}

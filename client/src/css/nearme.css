@@ -1,0 +1,9 @@
+.featured-section h1{
+    text-align: center;
+}
+.pet-searching-output{
+    margin-top: 50px;
+    margin-left: 200px;
+    display: flex;
+
+}
