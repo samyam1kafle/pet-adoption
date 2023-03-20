@@ -20,10 +20,18 @@ const {
 } = require("../controllers/ContactUsController");
 
 const {
-    AdminLogin
+    AdminLogin,
+    AdminPets,
+    AdminContact
 } = require("../controllers/Admin/AdminController");
 
 const route = express.Router();
+
+//Frontend Endpoints
+route.get('/admin', AdminLogin);
+route.get('/admin/pets', AdminPets);
+route.get('/admin/contacts', AdminContact);
+
 
 // Contact Us query
 route.post("/contactus/add", addContactUs);

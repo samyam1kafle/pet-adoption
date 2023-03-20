@@ -1,0 +1,47 @@
+{{>header}}
+{{>sidebar}}
+  <div class="main-container h-screen p-[30px] flex items-center justify-center pl-[330px] pr-[30px] py-[30px]">
+    <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+            <tr>
+                <th scope="col" class="px-6 py-3">
+                    Pet name
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Pet Type
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Breed
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Sex
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Age
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each petsData}}         
+            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    {{name}}
+                </th>
+                <td class="px-6 py-4">
+                    {{type}}
+                </td>
+                <td class="px-6 py-4">
+                    {{breed}}
+                </td>
+                <td class="px-6 py-4">
+                    {{sex}}
+                </td>
+                <td class="px-6 py-4">
+                    {{age}}
+                </td>
+            </tr>
+             {{/each}}
+        </tbody>
+    </table>
+  </div>
+{{>footer}}
