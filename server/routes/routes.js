@@ -3,7 +3,7 @@ const {
     getUsers,
     addUser,
     editUser,
-    deleteUser,
+    loginUser
 } = require("../controllers/UserController");
 
 const {
@@ -12,7 +12,8 @@ const {
     showAnimal,
     editAnimal,
     deleteAnimal,
-    searchFilterPets
+    searchFilterPets,
+    adopt_pet
 } = require("../controllers/PetController");
 
 const {
@@ -22,13 +23,15 @@ const {
 const {
     AdminLogin,
     AdminPets,
-    AdminContact
+    AdminContact,
+    Adminportal
 } = require("../controllers/Admin/AdminController");
 
 const route = express.Router();
 
 //Frontend Endpoints
 route.get('/admin', AdminLogin);
+route.post('/admin-login', Adminportal);
 route.get('/admin/pets', AdminPets);
 route.get('/admin/contacts', AdminContact);
 
@@ -46,12 +49,13 @@ route.get("/animals", getAnimals);
 route.post("/animals/add", addAnimal);
 route.get("/animals/:id", showAnimal);
 route.put("/animals/edit/:id", editAnimal);
+route.put("/animals/adopt/:id", adopt_pet);
 route.delete("/animals/delete/:id", deleteAnimal);
 
 // user api
+route.post("/login-user", loginUser);
 route.get("/users", getUsers);
 route.post("/user/add", addUser);
 route.put("/user/edit/:id", editUser);
-route.delete("/user/delete/:id", deleteUser);
 
 module.exports = route;

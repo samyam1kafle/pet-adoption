@@ -1,4 +1,5 @@
 const UserModel = require("../Models/User");
+const bcrypt = require("bcrypt");
 
 const getUsers = async(req, res) => {
     try {
@@ -17,7 +18,6 @@ const getUsers = async(req, res) => {
 const addUser = async(req, res) => {
     try {
         const body = req.body;
-
         const user = await UserModel.create(body);
         res.json({
             success: true,
@@ -34,7 +34,27 @@ const addUser = async(req, res) => {
 };
 
 const editUser = async(req, res) => {
-    try {} catch (error) {
+    try {
+        let user = await UserModel.findById(req.params.id);
+        if (!user) {
+            return res.json({
+                success: false,
+                message: "Counldnot find User"
+            });
+        }
+        let body = req.body;
+        user.name = body.name ? body.name : user.name;
+        user.email = body.email ? body.email : user.email;
+        user.password = body.password ? body.password : user.password;
+        user.contact = body.contact ? body.contact : user.contact;
+        user.status = body.status ? body.status : user.status;
+        user.save();
+        res.json({
+            success: true,
+            message: "User details updated sussessfully",
+        });
+
+    } catch (error) {
         console.error(error);
         res.json({
             success: false,
@@ -43,19 +63,40 @@ const editUser = async(req, res) => {
     }
 };
 
-const deleteUser = async(req, res) => {
-    try {} catch (error) {
-        console.error(error);
-        res.json({
+const loginUser = async(req, res) => {
+    const email = req.body.email;
+    const password = req.body.password;
+
+    // find the user in the database
+    const user = await UserModel.findOne({
+        email
+    });
+    if (!user) {
+        return res.json({
             success: false,
-            message: "Something went wrong !",
+            message: "Invalid Email!"
         });
     }
+    const passwordsMatch = await user.comparePassword(password);
+    // (password === user.password) ? true: false;
+
+    if (passwordsMatch) {
+
+        return res.json({
+            success: true,
+            message: user
+        });
+    };
+    return res.json({
+        success: false,
+        message: "Incorrect Password!"
+    });
 };
+
 
 module.exports = {
     getUsers,
     addUser,
     editUser,
-    deleteUser,
+    loginUser
 };

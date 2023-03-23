@@ -1,7 +1,18 @@
 const AnimalsModel = require("../../Models/Animals");
 const ContactUsModel = require("../../Models/ContactUs");
 const AdminLogin = async(req, res) => {
-    res.render('index');
+    res.render('login');
+}
+const Adminportal = async(req, res) => {
+    //authentication code here
+    const username = req.body.username;
+    const password = req.body.password;
+
+    if (username == "admin" && password == "admin") {
+        res.render('index');
+    } else {
+        res.redirect('/admin?error=1');
+    }
 }
 const AdminPets = async(req, res) => {
     const petsData = await AnimalsModel.find();
@@ -14,5 +25,6 @@ const AdminContact = async(req, res) => {
 module.exports = {
     AdminLogin,
     AdminPets,
-    AdminContact
+    AdminContact,
+    Adminportal
 }

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f0f0f0;
+		}
+		h1 {
+			text-align: center;
+			color: #333;
+		}
+		form {
+			background-color: #fff;
+			padding: 20px;
+			margin: 50px auto;
+			max-width: 500px;
+			box-shadow: 0 0 10px rgba(0,0,0,.1);
+			border-radius: 5px;
+		}
+		input[type="text"], input[type="password"] {
+			display: block;
+			margin: 10px 0;
+			padding: 10px;
+			width: 100%;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+			font-size: 16px;
+			box-sizing: border-box;
+		}
+		input[type="submit"] {
+			background-color: #333;
+			color: #fff;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 5px;
+			font-size: 16px;
+			cursor: pointer;
+		}
+		input[type="submit"]:hover {
+			background-color: #555;
+		}
+		.error {
+			color: red;
+			font-size: 14px;
+			margin-top: 5px;
+		}
+	</style>
+</head>
+<body>
+	<h1>Login</h1>
+	<form action="/admin-login" method="post">
+		<label for="username">Username:</label>
+		<input type="text" id="username" name="username" required>
+
+		<label for="password">Password:</label>
+		<input type="password" id="password" name="password" required>
+
+		<input type="submit" value="Log In">
+		
+	</form>
+</body>
+</html>

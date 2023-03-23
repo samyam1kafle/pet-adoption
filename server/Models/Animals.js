@@ -31,9 +31,20 @@ const AnimalsSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    status: {
+    pet_owner_id: {
+        type: String,
+        required: true,
+    },
+    adopted_owner_id: {
+        type: String
+    },
+    is_adopted: {
         type: Boolean,
         default: "0",
+    },
+    status: {
+        type: Boolean,
+        default: "1",
     },
 });
 

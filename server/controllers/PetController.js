@@ -3,8 +3,9 @@ const AnimalsModel = require("../Models/Animals");
 const getAnimals = async(req, res) => {
     try {
         animalList = await AnimalsModel.find({
-            'status': true
-        }, '__id type name breed sex age contact description image');
+            'status': true,
+            'is_adopted': false,
+        }, '__id type name breed sex age contact description image pet_owner_id');
 
         res.json({
             data: animalList,
@@ -28,7 +29,8 @@ const addAnimal = async(req, res) => {
             "age": body.age,
             "contact": body.contact,
             "description": body.description,
-            "image": body.image
+            "image": body.image,
+            "pet_owner_id": body.pet_owner_id
         };
 
         const animal = await AnimalsModel.create(animalData);
@@ -52,8 +54,9 @@ const showAnimal = async(req, res) => {
         const animalData = await AnimalsModel.
         findOne({
             _id: id,
-            status: true
-        }, '_id type name breed sex age contact description image').exec();
+            status: true,
+            'is_adopted': false,
+        }, '_id type name breed sex age contact description image pet_owner_id').exec();
         res.json({
             success: true,
             message: animalData,
@@ -86,6 +89,7 @@ const editAnimal = async(req, res) => {
         animal.status = body.status ? body.status : animal.status;
         animal.description = body.description ? body.description : animal.description;
         animal.image = body.image ? body.image : animal.image;
+        animal.pet_owner_id = animal.pet_owner_id;
         animal.save();
         res.json({
             success: true,
@@ -131,7 +135,8 @@ const searchFilterPets = async(req, res) => {
         const breed = filters.breed ? filters.breed : null;
         const sex = filters.sex ? filters.sex : null;
         let filterCriteria = {
-            status: true
+            status: true,
+            is_adopted: false
         };
         if (type != null) {
             filterCriteria.type = { $regex: type, $options: 'i' };
@@ -158,11 +163,39 @@ const searchFilterPets = async(req, res) => {
     }
 }
 
+const adopt_pet = async(req, res) => {
+    try {
+        let animal = await AnimalsModel.findById(req.params.id);
+        if (!animal) {
+            return res.json({
+                success: false,
+                is_adopted: false,
+                message: "Invalid Pet Id!"
+            });
+        }
+        let body = req.body;
+        animal.pet_owner_id = animal.pet_owner_id;
+        animal.adopted_owner_id = body.adopted_owner_id ? body.adopted_owner_id : null;
+        animal.is_adopted = body.is_adopted ? body.is_adopted : false;
+        animal.save();
+        res.json({
+            success: true,
+            message: "Pet Adopted sussessfully",
+        });
+    } catch (error) {
+        console.log(error);
+        res.json({
+            success: false,
+            message: "Something went wrong !"
+        });
+    }
+}
 module.exports = {
     getAnimals,
     addAnimal,
     showAnimal,
     editAnimal,
     deleteAnimal,
-    searchFilterPets
+    searchFilterPets,
+    adopt_pet
 };
