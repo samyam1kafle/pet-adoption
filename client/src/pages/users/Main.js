@@ -1,10 +1,16 @@
-import React from 'react';
+import React,{useEffect} from 'react';
+import sendRequest from '../../api/functions';
 import Navbar from '../../components/Navbar';
 import SearchForm from '../../components/SearchForm';
 import SinglePet from '../../components/SinglePet';
 import "../../css/main.css";
 
 class Main extends React.Component {
+  
+  componentDidMount(){
+    // sendRequest('animals', (response) => console.log(response.data), (response) => console.log(response))
+  }
+
   render() {
     return (
 

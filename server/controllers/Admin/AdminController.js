@@ -1,5 +1,6 @@
 const AnimalsModel = require("../../Models/Animals");
 const ContactUsModel = require("../../Models/ContactUs");
+
 const AdminLogin = async(req, res) => {
     res.render('login');
 }
