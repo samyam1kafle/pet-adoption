@@ -5,12 +5,14 @@ const userSchema = new mongoose.Schema({
     name: {
         type: String,
         required: true,
+        unique: true,
+        index: true
     },
     email: {
         type: String,
         required: true,
-        unique: true,
     },
+
     password: {
         type: String,
         required: true,
@@ -40,5 +42,7 @@ userSchema.methods.comparePassword = async function(password) {
 };
 
 const UserModel = mongoose.model("user", userSchema);
+
+UserModel.createIndexes();
 
 module.exports = UserModel;

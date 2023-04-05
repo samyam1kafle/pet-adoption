@@ -64,17 +64,18 @@ const editUser = async(req, res) => {
 };
 
 const loginUser = async(req, res) => {
-    const email = req.body.email;
+    const username = req.body.username;
     const password = req.body.password;
 
     // find the user in the database
     const user = await UserModel.findOne({
-        email
+        name: username
     });
+    console.log(user);
     if (!user) {
         return res.json({
             success: false,
-            message: "Invalid Email!"
+            message: "Invalid Username or Password!"
         });
     }
     const passwordsMatch = await user.comparePassword(password);

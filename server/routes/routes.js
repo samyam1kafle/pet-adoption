@@ -13,7 +13,8 @@ const {
     editAnimal,
     deleteAnimal,
     searchFilterPets,
-    adopt_pet
+    adopt_pet,
+    addToFavorate
 } = require("../controllers/PetController");
 
 const {
@@ -45,6 +46,8 @@ route.get("/filter", searchFilterPets);
 
 
 // Pets api
+
+route.post("/animals/like", addToFavorate);
 route.get("/animals", getAnimals);
 route.post("/animals/add", addAnimal);
 route.get("/animals/:id", showAnimal);

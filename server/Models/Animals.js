@@ -42,6 +42,18 @@ const AnimalsSchema = new mongoose.Schema({
         type: Boolean,
         default: "0",
     },
+    is_neutered: {
+        type: Boolean,
+        default: false
+    },
+    own_pet: {
+        type: Boolean,
+        default: false
+    },
+    withhold_date: {
+        type: Date,
+        required: true
+    },
     status: {
         type: Boolean,
         default: "1",

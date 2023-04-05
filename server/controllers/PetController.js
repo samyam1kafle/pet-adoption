@@ -1,14 +1,50 @@
 const AnimalsModel = require("../Models/Animals");
 
+const FavorateModel = require("../Models/Favorate");
+
+const addToFavorate = async(req, res) => {
+    try {
+        const addFav = await FavorateModel.create(req.body);
+        return res.json({
+            success: true,
+            message: "Pet added to favourate successfully !",
+            data: addFav,
+        });
+    } catch (error) {
+        console.log(error);
+        return res.json({
+            success: false,
+            message: "Something went wrong"
+        })
+    }
+}
+
 const getAnimals = async(req, res) => {
     try {
+        let user = req.body.user_id;
+        if (user.length > 0) {
+            favList = await FavorateModel.find({
+                'user_id': user
+            }, 'pet_id');
+        }
         animalList = await AnimalsModel.find({
             'status': true,
             'is_adopted': false,
-        }, '__id type name breed sex age contact description image pet_owner_id');
+        }, '__id type name breed sex age contact description image is_neutered withhold_date pet_owner_id');
 
+        const newData = animalList.map(element => {
+            let is_favourite = false;
+            if (favList.length > 0) {
+                favList.forEach(val => {
+                    if (val.pet_id == element._id) {
+                        is_favourite = true;
+                    }
+                });
+            }
+            return {...element.toObject(), is_favourite };
+        });
         res.json({
-            data: animalList,
+            data: newData,
         });
     } catch (error) {
         console.error(error);
@@ -30,7 +66,10 @@ const addAnimal = async(req, res) => {
             "contact": body.contact,
             "description": body.description,
             "image": body.image,
-            "pet_owner_id": body.pet_owner_id
+            "pet_owner_id": body.pet_owner_id,
+            "own_pet": body.own_pet,
+            "is_neutered": body.is_neutered,
+            "withhold_date": body.withhold_date
         };
 
         const animal = await AnimalsModel.create(animalData);
@@ -51,12 +90,29 @@ const addAnimal = async(req, res) => {
 const showAnimal = async(req, res) => {
     try {
         const id = req.params.id;
-        const animalData = await AnimalsModel.
+        let user = req.body.user_id;
+        if (user.length > 0) {
+            favList = await FavorateModel.findOne({
+                'user_id': user
+            }, 'pet_id');
+        }
+        let animalData = await AnimalsModel.
         findOne({
             _id: id,
             status: true,
             'is_adopted': false,
-        }, '_id type name breed sex age contact description image pet_owner_id').exec();
+        }, '_id type name breed sex age contact description image pet_owner_id is_neutered ').exec();
+
+        let is_favourite = false;
+        if (favList.length > 0) {
+            favList.forEach(val => {
+                if (val.pet_id == animalData._id) {
+                    is_favourite = true;
+                }
+            });
+        }
+
+        animalData = {...animalData.toObject(), is_favourite };
         res.json({
             success: true,
             message: animalData,
@@ -90,6 +146,10 @@ const editAnimal = async(req, res) => {
         animal.description = body.description ? body.description : animal.description;
         animal.image = body.image ? body.image : animal.image;
         animal.pet_owner_id = animal.pet_owner_id;
+        animal.own_pet = body.own_pet ? body.own_pet : animal.own_pet;
+        animal.is_neutered = body.is_neutered ? body.is_neutered : animal.is_neutered;
+        animal.withhold_date = body.withhold_date ? body.withhold_date : animal.withhold_date;
+
         animal.save();
         res.json({
             success: true,
@@ -197,5 +257,6 @@ module.exports = {
     editAnimal,
     deleteAnimal,
     searchFilterPets,
-    adopt_pet
+    adopt_pet,
+    addToFavorate
 };
