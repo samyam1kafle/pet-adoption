@@ -18,9 +18,7 @@ class RequestedPets extends React.Component {
                                 <th scope="col" class="px-6 py-3">
                                     Request ID
                                 </th>
-                                <th scope="col" class="px-6 py-3">
-                                    User ID
-                                </th>
+                               
                                 <th scope="col" class="px-6 py-3">
                                     Animal ID
                                 </th>
@@ -39,10 +37,7 @@ class RequestedPets extends React.Component {
                             <tr class="border-b border-secondary-200 bg-secondary-100 text-neutral-800">
                                 <td class="px-6 py-4">
                                     R1
-                                </td>
-                                <td class="px-6 py-4">
-                                    A1
-                                </td>
+                                </td>   
                                 <td class="px-6 py-4">
                                     B1
                                 </td>
@@ -61,10 +56,7 @@ class RequestedPets extends React.Component {
                             <tr class="border-b border-neutral-100 bg-neutral-50 text-neutral-800 dark:bg-neutral-50">
                                 <td class="px-6 py-4">
                                     R1
-                                </td>
-                                <td class="px-6 py-4">
-                                    A1
-                                </td>
+                                </td>   
                                 <td class="px-6 py-4">
                                     B1
                                 </td>
@@ -83,10 +75,7 @@ class RequestedPets extends React.Component {
                             <tr class="border-b border-secondary-200 bg-secondary-100 text-neutral-800">
                                 <td class="px-6 py-4">
                                     R1
-                                </td>
-                                <td class="px-6 py-4">
-                                    A1
-                                </td>
+                                </td>   
                                 <td class="px-6 py-4">
                                     B1
                                 </td>
@@ -105,10 +94,7 @@ class RequestedPets extends React.Component {
                             <tr class="border-b border-neutral-100 bg-neutral-50 text-neutral-800 dark:bg-neutral-50">
                                 <td class="px-6 py-4">
                                     R1
-                                </td>
-                                <td class="px-6 py-4">
-                                    A1
-                                </td>
+                                </td>   
                                 <td class="px-6 py-4">
                                     B1
                                 </td>
