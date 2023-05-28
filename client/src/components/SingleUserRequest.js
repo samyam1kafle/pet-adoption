@@ -20,8 +20,16 @@ class SingleUserRequest extends React.Component {
                     <h1 className='pet-name'>Ram</h1>
                     
                     <div className='action'>
-                        <button>Accept</button>
-                        <button>Decline</button>
+                        {!this.props.button || <button>{this.props.buttonText}</button>}
+                        {
+                            this.props.button 
+                            ||
+                            <>
+                                <button>Accept</button>
+                                <button>Decline</button>
+                            </>
+                        }
+                        
                     </div>
                 </div>
             </div>

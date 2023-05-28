@@ -28,3 +28,6 @@
     padding: 20px 80px;
     border: 2px solid black;
 }
+.register-form input[type='text'], .register-form input[type='number'], textarea{
+    border: 2px solid black;
+}

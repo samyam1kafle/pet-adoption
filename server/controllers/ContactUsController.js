@@ -23,6 +23,22 @@ const addContactUs = async(req, res) => {
         });
     }
 }
+
+const getContactUs = async(req, res) => {
+    try {
+        contactMessageList = await ContactUsModel.find();
+        res.json({
+            data: contactMessageList,
+        });
+    } catch (error) {
+        console.error(error);
+        res.json({
+            success: false,
+            message: "Something went wrong !",
+        });
+    }
+};
 module.exports = {
-    addContactUs
+    addContactUs,
+    getContactUs
 };

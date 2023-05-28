@@ -7,19 +7,16 @@ class AdminNavbar extends React.Component {
         <div className='navbar'>
 
           <div className='logo nav-item'>
-            <img src='' alt='logo' />
+            <img src='' alt='PetMe' />
           </div>
           <nav className='nav-item'>
-            <div className='nav-toggle'>
-              <button className='selected-button'>Adopt</button>
-              <button>Register</button>
-            </div>
+         
 
             <ul>
-              <li><a href='#'>All Animals</a></li>
-              <li><a href='#'>User Request</a></li>
-              <li><a href='#'>User Messages</a></li>
-              <li><a href='#'>History</a></li>
+              <li><a href='/allanimals'>All Animals</a></li>
+              <li><a href='/userrequest'>User Request</a></li>
+              <li><a href='/usermessage'>User Messages</a></li>
+              <li><a href='/historypage'>History</a></li>
             </ul>
           </nav>
         </div>

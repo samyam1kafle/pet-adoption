@@ -21,8 +21,10 @@ const addToFavorate = async(req, res) => {
 
 const getAnimals = async(req, res) => {
     try {
+        let favList = []
         let user = req.body.user_id;
-        if (user.length > 0) {
+
+        if (user != undefined && user.length > 0) {
             favList = await FavorateModel.find({
                 'user_id': user
             }, 'pet_id');

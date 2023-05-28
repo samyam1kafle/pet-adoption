@@ -1,16 +1,27 @@
 import axios from "axios";
 import API_URL from ".";
 
-const sendRequest = (postfix, success, failed = undefined) => {
+const sendRequest = (postfix, requestType = "POST", data, success, failed = undefined) => {
     if (failed == undefined){
-        failed = () => {
-            console.log(failed.data)
+        failed = (e) => {
+            console.log(e)
         }
     }
-
-    axios.get(`${API_URL}${postfix}`)
-    .then(success)
-    .catch(failed);
+    if(requestType == "GET"){
+        axios.get(`${API_URL}${postfix}`, data)
+        .then(success)
+        .catch(failed);
+    }
+    if(requestType == "PUT"){
+        axios.put(`${API_URL}${postfix}`, data)
+        .then(success)
+        .catch(failed);
+    }
+    else{
+        axios.post(`${API_URL}${postfix}`, data)
+        .then(success)
+        .catch(failed);
+    }
 }
 
 export default sendRequest

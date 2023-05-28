@@ -12,10 +12,10 @@ class PetNearMe extends React.Component {
         <br/>
         <div className='featured-section'>
 
-          <h1>Searching pets near you...</h1>
+          <h1>Searching nearby pets...</h1>
           <div className='pet-searching-output'>
-            <SinglePet />
-            <SinglePet />
+            <SinglePet petName="Puppy" />
+            <SinglePet petName="Dumpy"/>
 
           </div>
         </div>

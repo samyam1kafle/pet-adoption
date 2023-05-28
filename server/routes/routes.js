@@ -18,7 +18,8 @@ const {
 } = require("../controllers/PetController");
 
 const {
-    addContactUs
+    addContactUs,
+    getContactUs
 } = require("../controllers/ContactUsController");
 
 const {
@@ -39,6 +40,7 @@ route.get('/admin/contacts', AdminContact);
 
 // Contact Us query
 route.post("/contactus/add", addContactUs);
+route.post("/contactus", getContactUs);
 
 
 // Search Endpoint

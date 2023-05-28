@@ -20,17 +20,17 @@ class App extends React.Component {
         <BrowserRouter>
         <Routes>
           <Route path="/" element={<Main />}/>
-          <Route path="login" element={<Login />} />
-          <Route path="register" element={<Register />} />
+          <Route path="register" element={<Register />} />  
           <Route path="signup" element={<Signup />} />
           <Route path="animals" element={<Animals />} />
-          <Route path="petnearme" element={<PetNearMe />} />
-          <Route path="allanimals" element={<AllAnimals />} />
-          <Route path="messageus" element={<MessageUs />} />
-          <Route path="userrequest" element={<UserRequest />} />
-          <Route path="usermessage" element={<UserMessage />} />
-          <Route path="historypage" element={<HistoryPage />} />
           <Route path="careandhealth" element={<CareAndHealth />} />
+          <Route path="allanimals" element={<AllAnimals />} />
+          <Route path="petnearme" element={<PetNearMe />} />
+          <Route path="messageus" element={<MessageUs />} />
+          <Route path="historypage" element={<HistoryPage />} />
+          <Route path="usermessage" element={<UserMessage />} />
+          <Route path="userrequest" element={<UserRequest />} />
+          <Route path="login" element={<Login />} /> 
         </Routes>
       </BrowserRouter>
       );

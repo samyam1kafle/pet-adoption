@@ -20,3 +20,9 @@
 .featured-content{
     margin-left: 20px;
 }
+.action button{
+    margin-left: 2px;
+    border: 2px solid black;
+    width: 100%;
+    margin-bottom: 20px;
+}

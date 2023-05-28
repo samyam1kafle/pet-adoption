@@ -13,9 +13,9 @@ class UserRequest extends React.Component {
         <div className='featured-user-section'>
 
           <div className='admin-all-user-request'>
-            <SingleUserRequest />
-            <SingleUserRequest />
-            <SingleUserRequest />
+            <SingleUserRequest button={false} buttonText="Accepted" />
+            <SingleUserRequest button={false} buttonText="Decline" />
+            <SingleUserRequest button={false} buttonText="Accepted" />
           </div>
         </div>
       </div>
