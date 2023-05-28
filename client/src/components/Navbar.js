@@ -28,7 +28,7 @@ class Navbar extends React.Component {
               <li><a href='/careandhealth'>Pet care & Health</a></li>
               <li><a href='/petnearme'>Pet near me</a></li>
               <li><a href='/signup'>Sign Up</a></li>
-              <li><a href='/requestedpets'>User Request</a></li>
+              <li><a href='/requestedpets'>Requested Pets</a></li>
               <li><a href='/messageus'>Message us</a></li>
             </ul>
           </nav>
