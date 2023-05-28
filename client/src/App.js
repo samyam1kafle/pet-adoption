@@ -5,6 +5,7 @@ import Login from "./pages/users/Login";
 import Signup from "./pages/users/Signup";
 import Register from "./pages/users/Register";
 import Animals from "./pages/users/Animals";
+import RequestedPets from "./pages/users/RequestedPets";
 import MessageUs from "./pages/users/MessageUs";
 import CareAndHealth from "./pages/users/CareAndHealth";
 import PetNearMe from "./pages/users/PetNearMe";
@@ -30,6 +31,7 @@ class App extends React.Component {
           <Route path="historypage" element={<HistoryPage />} />
           <Route path="usermessage" element={<UserMessage />} />
           <Route path="userrequest" element={<UserRequest />} />
+          <Route path="requestedpets" element={<RequestedPets />} />
           <Route path="login" element={<Login />} /> 
         </Routes>
       </BrowserRouter>

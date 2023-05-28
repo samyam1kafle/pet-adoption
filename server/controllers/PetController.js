@@ -185,7 +185,7 @@ const deleteAnimal = async(req, res) => {
 
 const searchFilterPets = async(req, res) => {
     try {
-        const filters = req.body;
+        const filters = req.query;
         if (!filters || filters.length <= 0) {
             return res.json({
                 success: false,

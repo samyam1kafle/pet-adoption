@@ -34,10 +34,10 @@ class Main extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    const { type, age, breed, sex } = this.state;
+    const { breed1, age, breed, sex, type } = this.state;
+    let realBreed = type == "Cat" ? breed1 : breed;
 
-
-    axios.get(`${API_URL}filter`, { params : { type, age, breed, sex } })
+    axios.get(`${API_URL}filter`, { params : { type, age, breed: realBreed , sex } })
     .then((e) => { 
       this.setState({"animals" : e.data.message});
       if(e.data.message.length == 0){
@@ -61,7 +61,7 @@ class Main extends React.Component {
           <h1>Searched Pets</h1>
           <div className='featured-showcase'>
             {this.state.animals.map(e => {
-                return <SinglePet fill={true} is_adopted={e.is_adopted} petName={e.name} paragraph={e.description} ownerId={123}/>
+                return <SinglePet id={e._id} name={e.name} age={e.age} sex={e.sex} contact={e.contact} breed={e.breed}  fill={true} animalId={e._id} is_adopted={e.is_adopted} petName={e.name} paragraph={e.description} ownerId={"6473af248390dc3cd75b3d6a"}/>
             })}
             {/* <SinglePet petName="Kuppy"/>
             <SinglePet petName="Duppy"/> */}

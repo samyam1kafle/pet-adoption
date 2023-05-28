@@ -13,9 +13,9 @@ class SearchForm extends React.Component {
             <br/>      
             <select value={this.props.state.age} name='age' onChange={this.props.handleChange}>
               <option disabled>Age</option>
-              <option>Puppy</option>
-              <option>Young</option>
-              <option>Old</option>
+              <option value={1}>Puppy</option>
+              <option value={2}>Young</option>
+              <option value={3}>Old</option>
             </select>
 
             {
